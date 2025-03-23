@@ -1,0 +1,26 @@
+{
+	"name": "backend",
+	"version": "1.0.0",
+	"scripts": {
+		"format": "prettier . --write",
+		"lint": "eslint **/*.{js,ts}",
+		"db:init": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+		"db:update": "sequelize db:migrate && sequelize db:seed:all",
+		"test": "prettier . --check && eslint **/*.{js,ts}",
+		"dev": "nodemon index.js --mode=development",
+		"start": "node index.js --mode=production"
+	},
+	"dependencies": {
+		"express": "^4.21.2",
+		"mysql2": "^3.14.0",
+		"sequelize": "^6.37.6"
+	},
+	"devDependencies": {
+		"eslint": "^8.57.1",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-spellcheck": "^0.0.20",
+		"nodemon": "^3.1.9",
+		"prettier": "^3.5.3",
+		"sequelize-cli": "^6.6.2"
+	}
+}
